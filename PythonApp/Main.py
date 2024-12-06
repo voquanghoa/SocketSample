@@ -14,7 +14,7 @@ def send_ma_yte(ma):
     json_data = json.dumps(data)
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect(('localhost', 6721))
+        s.connect((SERVER_DOMAIN, SERVER_PORT))
         s.sendall(json_data.encode('utf-8'))
         
         print(f"Sent: {json_data}")
