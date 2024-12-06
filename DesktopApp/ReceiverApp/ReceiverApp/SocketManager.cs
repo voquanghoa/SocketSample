@@ -72,8 +72,9 @@ namespace ReceiverApp
         private async Task ReadSocket(TcpClient client)
         {
             await using var stream = client.GetStream();
+
             var buffer = new byte[BufferSize]; //10Kb chắc đủ rồi
-            var bytesRead = stream.Read(buffer, 0, buffer.Length);
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
 
             var message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
 
