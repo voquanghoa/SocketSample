@@ -24,7 +24,7 @@ def send_ma_yte(ma):
 
 if __name__ == "__main__":
     if len(sys.argv) < 1:
-        print("Usage: python send_json.py <content>")
+        print("Usage: python Main.py <content>")
         sys.exit(1)
 
     content = sys.argv[1]
